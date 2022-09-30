@@ -1,0 +1,38 @@
+
+body {
+   font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h2 {
+   font-family: 'Plus Jakarta Sans', sans-serif;
+   font-weight: 500;
+}
+
+p {
+   font-size: 17px;
+   line-height: 24px;
+}
+
+h4 strong {
+   background-color: orange;
+   color: white;
+   font-style: italic;
+}
+
+strong {
+   color: green;
+}
+
+.linea-destacada {
+   font-size: 20px;
+   line-height: 28px;
+   text-decoration: underline;
+}
+
+.linea-destacada em {
+   font-style: italic;
+}
+
+li {
+   margin-left: 0px;
+}

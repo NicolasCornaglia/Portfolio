@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %> </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <h1><%= movie.title %> </h1>    
+    <br>
+    <p>RATING: <%= movie.rating %> </p>
+    <p>AWARDS: <%= movie.awards %> </p>
+    <p>LENGTH: <%= movie.length + ' min'%> </p>
+    <p>RELEASE DATE:  <%= parseDate.year %>-<%= parseDate.month %>-<%= parseDate.date %>  </p>
+    <p>GENRE: <%= movie.genero.name%></p>
+    <li>
+        ACTORS:
+        <ul>
+            <% for (let i =0; i< movie.actores.length; i++) { %>
+                <li style="margin-left: 100px;">
+                    <%= movie.actores[i].first_name%> <%= movie.actores[i].last_name%>
+                </li>
+            <% } %>
+        </ul>
+    </li>
+    <br>
+    <section>
+        <a href="/movies/add"><button>Agregar</button></a>
+        <a href="/movies"><button>Listado de Peliculas</button></a>
+        <a href="/movies/edit/<%= movie.id%>"><button>Modificar</button></a>
+        <a href="/movies/delete/<%= movie.id%>"><button>Borrar<button></a>
+    </section>
+
+</body>
+</html>

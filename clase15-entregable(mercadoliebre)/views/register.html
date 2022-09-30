@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Register</title>
+   <link rel="stylesheet" href="css/styles-register.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+<body>
+   <header class="main-header">
+        <div class="main-header-top-bar-web">
+                <img src="images/logo-mercado-liebre.svg" class="logo">
+            
+                <div class="form" action="#" method="GET">
+                    <input class="input" placeholder="Buscar productos, marcas y más"/>
+                    <button class="submit"><i class="fa fa-search"></i></button>
+                </div>
+            <h2 class="copy-header"><i class="fas fa-hand-holding-usd"></i>Comprá en cuotas y sin tarjeta de credito</h2>  
+        </div> 
+
+        <div class="main-header-mobile">
+            <div class="top-header-mobile"><img src="images/logo-mercado-liebre.svg" class="logo">
+                <div class="form" action="#" method="GET">
+                    <input class="searchbar" placeholder="Buscar productos, marcas y más"/>
+                    <button class="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <h2 class="copy-header"><i class="fas fa-hand-holding-usd"></i>Comprá en cuotas y sin tarjeta de credito</h2> 
+        </div>
+
+
+        <a href="#" class="hamburger-button">
+              <i class="fas fa-bars"></i>
+        </a>
+
+        <nav class="main-navbar">
+            <ul class="left-navbar">
+                  <li><a href="#">Ofertas</a></li>
+                  <li><a href="#">Tiendas Oficiales</a></li>
+                  <li><a href="#">Ventas   </a></li>    
+                  <li><a href="#">Ayuda</a></li>
+            </ul>
+
+            <ul class="right-navbar">
+                <li><a href="/register">Crea tu cuenta</a><i class="fas fa-credit-card"></i></li>
+                <li><a href="/login">Ingresá<i class="fas fa-sign-in-alt"></i></a></li>
+                <li><a href="#">Mis compras<i class="fas fa-shopping-basket"></i></a></li>    
+            </ul>
+        </nav>
+
+    </header>
+
+   <main>
+      <form action='/' method="POST" class="flexbox-register">
+            <input type="text" name="fullname" class="nombreYApellido" placeholder="Nombre y apellido" required minlength="4">
+            <input type="text" name="username" class="nombreUsuario" placeholder="Nombre de usuario" required minlength="4">
+            <input type="email" name="email" class="email" placeholder="E-mail" required minlength="4">
+         
+            <label><h3>Fecha de nacimiento:</h3></label>
+            <input type="date" name="birthdate" class="fechaDeNacimiento">
+            <input type="text" name="adress" class="domicilio" placeholder="Domicilio" required minlength="4"> 
+
+            <label><h3>Perfil de usuario:</h3></label>
+            <div>
+            <input type="radio" name="buyer" class="comprador">Comprador
+            <input type="radio" name="seller" class="vendedor">Vendedor  
+            </div>
+
+         
+            <label><h3>Intereses:</h3></label>
+            <div>
+            <input type="checkbox" name="interests" value="electronics">Electro
+            </div>
+            <div>
+            <input type="checkbox" name="interests" value="fashion">Moda 
+            </div>
+            <div>
+            <input type="checkbox" name="interests" value="home">Hogar
+            </div>
+            <div>
+            <input type="checkbox" name="interests" value="toys">Jugueteria
+            </div>
+            <div>
+            <input type="checkbox" name="interests" value="helthy-life">Vida sana
+            </div>
+
+            <label><h3>Foto de usuario:</h3></label>
+            <input type="file" name="user-photo" class="foto-usuario" placeholder="Foto de perfil">
+
+            <input type="password" name="pw" class="clave" placeholder="Contraseña">
+            <input type="password" name="pw-check" class="checkeo-clave" placeholder="Confirmar contraseña" required minlength="4">
+
+            <button type="reset"> Borrar
+            <button type="submit"> Enviar
+   </main>
+
+</body>
+</html>
