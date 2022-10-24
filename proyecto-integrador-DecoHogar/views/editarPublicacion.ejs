@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="\css\stylesCreacion.css">  
+    <script src="/js/product-create-validation.js"></script>
+    <script src="/js/edit-product.js" ></script>
+</head>
+
+<script>
+
+</script>
+
+
+<body>
+
+    <header class="main-header">
+        <%- include('./partials/header') %>
+    </header>
+
+    <main class="mainEditar">
+        <div class="form-card">
+            <h1 id="editar">Editar producto: <%= data.productToEdit.name %> </h1>
+            <form id="form" class="login" action="/p/api/products/<%- data.productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <label class="label">Nombre del Producto:</label>
+                <input type="text" name="name" placeholder="Nombre del Producto" value="<%- data.productToEdit.name %>" id="name" class="formInput">
+                <div class="name-error"></div>
+                <% for (let error of errors) { %> 
+                    <% if (error.param == "name") { %> 
+                        <p style="color: red"> <%= error.msg %> </p>
+                    <% } %>
+                <% } %> 
+                <label class="label">Descripción:</label>
+                <input type="text" name="description" placeholder="Descripción" value="<%= data.productToEdit.description %>"  id="description" class="formInput">
+                <div class="description-error"></div>
+                <% for (let error of errors) { %> 
+                    <% if (error.param == "description") { %> 
+                        <p style="color: red"> <%= error.msg %> </p>
+                    <% } %>
+                <% } %> 
+                <label class="label">Imagen:</label>
+                <input type="file" name="image" id="image"> 
+                <div class="image-error"></div>
+                <div style="color: grey"> Si desea mantener la imagen original, no seleccione ningun archivo.</div>
+                <% for (let error of errors) { %> 
+                    <% if (error.param == "image") { %> 
+                        <p style="color: red"> <%= error.msg %> </p>
+                    <% } %>
+                <% } %> 
+                <label  class="label">Categoría:</label>
+                <select name="category" value="<%= data.productToEdit.category %>"  required class="select">
+                    <% for (let category of data.categories) { %>
+                        <% if (category.id == data.productToEdit.category_id) { %>
+                        <option value="<%= category.id %>" selected ><%= category.name %></option>
+                        <% } else {%>
+                            <option value="<%= category.id %>" ><%= category.name %></option>
+                        <% } %>
+                    <% } %> 
+                </select>
+                <label class="label">Color:</label>
+                <select name="colors" value="<%= data.productToEdit.color_id %>" required class="select">
+                    <% for (let color of data.colors) { %>
+                        <% if (color.id == data.productToEdit.color_id) { %>
+                        <option value="<%= color.id %>" selected ><%= color.name %></option>
+                        <% } else {%>
+                        <option value="<%= color.id %>"><%= color.name %></option>
+                        <% } %>
+                    <% } %>  
+                </select>    
+                <label class="label">Precio:</label>
+                <input type="text" name="price" placeholder="Precio" id="price" value="<%= data.productToEdit.price %>" required class="formInput">
+                <label class="label">Dimensiones en formato Alto x Ancho x Profundidad:</label>
+                <input type="text" name="dimensions" placeholder="Dimensiones" id="dimensions" value="<%= data.productToEdit.dimensions %>" required class="formInput">
+                <label class="label">Materiales:</label>
+                <select name="materials" value="<%= data.productToEdit.material_id %>" required class="select">
+                    <% for (let material of data.materials) { %>
+                        <option value="<%= material.id %>"><%= material.name %></option>
+                    <% } %>  
+
+                    <% for (let material of data.materials) { %>
+                        <% if (material.id == data.productToEdit.material_id) { %>
+                        <option value="<%= material.id %>" selected ><%= material.name %></option>
+                        <% } else {%>
+                            <option value="<%= material.id %>"><%= material.name %></option>
+                        <% } %>
+                    <% } %> 
+                </select> 
+                <button class="create-button" type="submit" id="formButton">Finalizar Edición</button>
+                <button class="reset-button" id="formButton"><a href="/">Cancelar Edición</a></button>
+            </form>
+        </div>
+    </main>
+
+  <footer>
+     <%- include('./partials/footer') %>
+  </footer>
+
+</body>
+</html>
+

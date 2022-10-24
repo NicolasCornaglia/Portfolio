@@ -1,0 +1,196 @@
+/* Inicio del main */
+body {
+    background-image: url(../images/png-transparent-white-and-brown-wooden-surface-texture-wood-white-wooden-background-texture-white-photography-grey-thumbnail.png);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    background-size: 200px;
+}
+
+.main-web {
+    display: none;
+}
+
+
+main {
+    margin: auto;
+    width: 90vw;
+    box-sizing: border-box;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.product {
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+.product-name {
+    padding: 5px;
+}
+
+.top-img {
+    text-align: center;
+    padding: 15px;
+}
+
+main div img {
+    width: 90%;
+    border-radius: 5px;
+
+}
+
+.bottom-img {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 20px;
+    border-top: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.bottom-buttons {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    gap: 10px ;
+    
+}
+
+.cuantity,
+.buy-now,
+.add-to-cart {
+    padding: 10px 0px;
+    font-size: 15px;
+}
+
+
+.cuantity {
+    width: 70%;
+}
+
+.cantidad {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+/* Fin del main */
+
+@media (min-width: 768px) {
+
+
+/* Inicio del main */
+
+.main-mobile {
+    display: none;
+}
+
+.main-web {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: space-between;
+}
+
+.flexbox-producto {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 3%;
+    max-width: 1100px;
+    align-self: center;
+    width: 80%;
+}
+
+
+    /* Center content start */
+.product-img img {
+    width: 450px;
+    height: 650px;
+}
+
+.product-img {
+    display: flex;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    justify-content: center;
+    background-color: white;
+    }
+    /* Center content end */
+
+
+    /* Right content start */
+.rigth-info {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    padding: 15px;
+    font-size: 20px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    justify-content: space-around;
+    background-color: white;
+}
+
+.rigth-info .cantidad {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.button {
+    background-color: white;
+    border: none;
+    box-shadow: 1px 1px gray;
+    height: 25px;
+    cursor: pointer;
+}
+
+.cuantity {
+    width: 100%;
+    font-size: 15px;
+    height: 35px
+}
+
+.button:hover {
+    background-color: lightskyblue;
+    transition: all 1200ms;
+} 
+
+.buy-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.buy-buttons button {
+    background-color: lightgray;
+}
+
+.buy-buttons button:hover {
+    background-color: lightgreen;
+    transition: all 1200ms;
+} 
+
+.title {
+    text-decoration: underline;
+    margin-top: 20px
+}
+
+
+
+    /* Right content end */
+
+/* Fin del main */
+
+
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="\css\styles-searchProducts.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <script src="https://kit.fontawesome.com/5d251886e4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <%- include('./partials/header') %>
+    </header>
+    <%if(products.length> 0){%>
+        <h3 class="title">Productos encontrados</h3>
+        <%} else {%>
+            <h3 class="title error">No se encontraron productos con el criterio de busqueda</h3>
+            <a href="/"><span class="back-home-button">Volver a Home</span></a>
+            <%}%>
+                <div class="products-container">
+
+                    <div class="products-row">
+
+                        <% for (let product of products) { %>
+
+                            <div class="product-card">
+
+                                <img src="<%- product.image%>" alt="Imagen del producto">
+                                <div class="main-card">
+                                    <!-- <a href="/productCart"><i class="fas fa-cart-plus"></i></a> -->
+                                    <button class="agregar_carrito" data-id="<%- products.id %>">
+                                        <i class="fas fa-cart-plus cart-icon" data-id="<%- product.id %>"></i>
+                                    </button>
+                                    <h4 class="product-name">
+                                        <%= product.name%>
+                                    </h4>
+                                    <h4 class="product-price">$<%= product.price.toFixed(2)%></h4>
+                                    <p class="product-description">
+                                        <%= product.description %>
+                                    </p>
+                                    <div class="link"><a href="/p/productDetail/<%- product.id %>"> Ver detalle </a></div>
+                                </div>
+
+                            </div>
+
+                            <% }%>
+
+                            <div class="space-div"></div>
+                    </div>
+                </div>
+
+                <footer>
+                    <%- include('./partials/footer') %>
+                </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <%- include('./partials/head') %>
+      <link rel="stylesheet" href="\css\styles-userEdit.css">
+      <script src="/js/edit-profile.js" ></script>
+</head>
+
+<body>
+   <header class="main-header">
+      <%- include('./partials/header') %>
+   </header>
+
+   <main class="conteiner">
+      <div class="conteiner-items">
+         <% if(locals.isLogged) { %>
+            <h1>Editar perfil de <%= user.firstname %>
+            </h1>
+            <img src="<%= user.avatar %>" alt="foto-perfil" class="avatar">
+            <h4>
+               <%= user.email %>
+            </h4>
+            <form class="form-edit" action="/u/api/users/editUser?_method=PUT" method="post">
+               <div class="input-form">
+                  <label for="currentPassword" class="title">Contraseña actual:</label>
+                  <input type="password" id="currentPassword" name="currentPassword" class="inputPassword">
+               </div>
+               <% if (error.length != 0) { %>
+                  <div class="errorPassword">
+                     <%= error %>
+                  </div>
+               <% } %>
+               <div class="input-form">
+                  <label for="newPassword" class="title">Nueva contraseña:</label>
+                  <input type="password" id="newPassword" name="newPassword" class="inputPassword">
+               </div>
+               <button class="button-profile">Cambiar contraseña</button>
+               <a href="/u/profile"><button class="backToProfileButton">Volver al perfil</button></a>
+            </form>
+            <% } %>
+      </div>
+
+   </main>
+
+   <footer>
+      <%- include('./partials/footer') %>
+   </footer>
+</body>
+
+</html>

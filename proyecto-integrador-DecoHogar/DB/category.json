@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "category_name": "Silla"
+    },
+    {
+        "id": 2,
+        "category_name": "Mesa"
+    },
+    {
+        "id": 3,
+        "category_name": "Cama"
+    }
+]

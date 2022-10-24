@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "color_name": "Gris"
+    },
+    {
+        "id": 2,
+        "color_name": "Blanco"
+    },
+    {
+        "id": 3,
+        "color_name": "Negro"
+    },
+    {
+        "id": 4,
+        "color_name": "Madera"
+    },
+    {
+        "id": 5,
+        "color_name": "Metalico"
+    },
+    {
+        "id": 6,
+        "color_name": "Marron"
+    },
+    {
+        "id": 7,
+        "color_name": "A"
+    },
+    {
+        "id": 8,
+        "color_name": "B"
+    },
+    {
+        "id": 9,
+        "color_name": "C"
+    },
+    {
+        "id": 10,
+        "color_name": "D"
+    }
+
+]

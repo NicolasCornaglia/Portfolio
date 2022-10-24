@@ -1,0 +1,149 @@
+
+/* Inicio del main */
+
+body {
+   background-image: url(../images/png-transparent-white-and-brown-wooden-surface-texture-wood-white-wooden-background-texture-white-photography-grey-thumbnail.png);
+   background-repeat: repeat;
+   background-position: center;
+   background-size: cover;
+   background-size: 200px;
+}
+.formulario {
+   display: flex;
+   flex-direction: column;
+   margin: auto;
+   padding: 15px;
+   width: 60%;
+   border-radius:3px;
+}
+
+.label {
+   text-decoration: underline;
+   margin-top: 15px;
+}
+
+input {
+   margin-bottom: 5px;
+   height: 2.25rem;
+}
+
+.write-space {
+   padding:3px 10px;
+	border:1px solid black;
+	border-radius:3px;
+	background-color: white;
+	margin:8px 0;
+}
+
+.buttons {
+   display: inline-block;
+   background-color: white;
+}
+
+.boton-registrar{
+   font-weight: bold;
+   background-color: #1259c3;
+   color: white;
+   border-radius:3px;
+   border:1px solid #1259c3;
+   height: 2vw;
+   padding:3px 10px;
+   margin-top:15px;
+
+}
+.boton-registrar:hover{
+   background-color: #0022AA;
+   cursor: pointer;
+}
+
+.boton-borrar{
+   font-weight: bold;
+   background-color: white;
+   color: #1259c3;
+   border-radius:3px;
+   border:1px solid #1259c3;
+   margin-top:8px;
+   margin-bottom: 8px;
+   padding:3px 10px;
+   height: 2vw;
+}
+.boton-borrar:hover{
+   background-color: #0022AA;
+   cursor: pointer
+}
+
+
+main input:focus {
+    border-color: orange;
+}
+main input:disabled {
+    background-color: beige;
+}
+
+.firstname-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+ .lastname-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+.email-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+ 
+ .password-error {
+   display: none;
+   color:#BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+ .avatar-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+ .is-valid {
+   border-color: #198754;
+ }
+ 
+ .is-invalid {
+   border-color: #842029;
+ }
+
+
+ input[type="file"]::file-selector-button {
+   border: 1px solid black;
+   padding: 0.2em 0.4em;
+   border-radius: 0.2em;
+   background-color: white;
+   transition: 0.5s;
+   width: 100%;
+   height: 30px;
+   margin-top: 5px;
+   cursor: pointer;
+ }
+ 
+ input[type="file"]::file-selector-button:hover {
+   border: 1px solid white;
+   border-radius: 5px;
+   background-color: black;
+   color: white
+ }
+
+
+
+ 
+ 

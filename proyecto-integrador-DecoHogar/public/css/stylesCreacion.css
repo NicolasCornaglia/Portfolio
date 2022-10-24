@@ -1,0 +1,148 @@
+.form-card #form {
+   display: flex;
+   flex-direction: column;
+   width: 50vw;
+   max-width: 1400px;
+   align-items: right;
+   gap: 5px;
+   background-color: whitesmoke;
+   padding: 20px;
+   border-radius: 2%;
+   box-shadow: 1px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   margin-bottom: 25px;
+}
+
+.form-card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 15px;
+}
+
+h1 {
+   padding: 15px;
+}
+
+.label {
+   margin-top: 10px
+}
+
+#form .create-button {
+   margin-top: 20px;
+   width: 60%
+}
+
+#form .formInput {
+   height: 30px;
+   border-color: none;
+   border: 1px solid black;
+   font-size: 16px;
+   border-radius: 5px;
+   padding: 6px
+}
+
+#form .formInput:hover {
+   background-color: lightcyan;
+   transition: 0.5s;
+}
+
+.select {
+   height: 30px;
+   /* border: 1px solid black; */
+   height: 30px;
+   font-size: 18px;
+   border-radius: 3px;
+}
+
+.create-button {
+   margin-top: 40px;
+   font-size: 20px;
+   background-color: white;
+   border: 1px solid black;
+   height: 30px;
+   border-radius: 5px;
+   align-self: center;
+   cursor: pointer;
+}
+
+.create-button:hover {
+   background-color: rgb(151, 219, 151);
+   transition: 0.5s;
+}
+
+.reset-button {
+   font-size: 20px;
+   margin-top: 20px;
+   background-color: white;
+   border: 1px solid black;
+   width: 60%;
+   height: 30px;
+   border-radius: 5px;
+   align-self: center;
+   cursor: pointer;
+}
+
+.reset-button:hover {
+   background-color: rgb(244, 113, 113);
+   transition: 0.5s;
+}
+
+
+.name-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+ 
+ .description-error {
+   display: none;
+   color:#BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+ .image-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+ .is-valid {
+   border-radius: 3px;
+   box-shadow: 0px 0px 1px 1px #198754;
+ }
+ 
+ .is-invalid {
+   border-radius: 3px;
+   box-shadow: 0px 0px 1px 1px #842029;
+ }
+
+ #form ::placeholder {
+   color: white;
+ }
+
+
+ #image {
+   background-color: white;
+ }
+
+ 
+ input[type="file"]::file-selector-button {
+   border: 1px solid black;
+   padding: 0.2em 0.4em;
+   border-radius: 0.2em;
+   background-color: white;
+   transition: 0.5s;
+   width: 100%;
+   height: 30px
+ }
+ 
+ input[type="file"]::file-selector-button:hover {
+   border: 1px solid white;
+   border-radius: 5px;
+   background-color: black;
+   color: white
+ }
