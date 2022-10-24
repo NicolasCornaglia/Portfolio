@@ -53,19 +53,39 @@ const controller = {
 		res.send(file) 
 	},
 
-	// Update - Form to edit
 	edit: (req, res) => {
-		res.render('product-edit-form');
-	},
-	// Update - Method to update
-	update: (req, res) => {
-		// Do the magic
+		const productId = parseInt(req.params.id,10);
+        let productToEdit = "";
+        for (let i=0; i<=products.length; i++) {
+            if (products[i].id === productId) {
+                productToEdit = products[i]
+                res.render("product-edit-form", {productToEdit: productToEdit})
+            } 
+        }
 	},
 
-	// Delete - Delete one product from DB
-	destroy : (req, res) => {
-		// Do the magic
-	}
+	update: (req, res) => {
+		let idUrl = req.params.id;
+		for (let i = 0; i < products.length; i++){
+			if(products[i].id == idUrl){
+				products[i].name = req.body.name,
+				products[i].price = req.body.price,
+				products[i].discount = req.body.discount
+				products[i].category = req.body.category,
+				products[i].description = req.body.description
+				}
+			 } res.redirect("/products")
+	},
+		
+	destroy : (req, res) => { 
+			let productId = parseInt(req.params.id, 10);
+			for (let i = 0; i < products.length; i++) {
+				if ( products[i].id === productId ) {
+					products.splice(i, 1)
+				}
+			}
+			res.send(`se ha borrado el producto id ${productId}`);
+		}    
 };
 
 module.exports = controller;
