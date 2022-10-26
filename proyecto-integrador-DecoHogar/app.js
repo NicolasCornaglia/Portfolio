@@ -1,7 +1,8 @@
 let express = require('express');
 let app = express();
-var cors = require('cors')
-const PORT = 3001;
+var cors = require('cors');
+const {PORT} = require('./configDB.js');
+/* const PORT = 3001; */
 const path = require('path');
 const methodOverride = require('method-override');
 const routes = require("./routes/routes");

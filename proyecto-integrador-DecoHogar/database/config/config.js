@@ -1,9 +1,11 @@
+const {DB_NAME, DB_HOST, DB_PASSWORD, DB_USER, DB_PORT} = require('../../configDB.js');
+
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "deco_hogar",
-    "host": "127.0.0.1",
+    "username": DB_USER,
+    "password": DB_PASSWORD,
+    "database": DB_NAME,
+    "host": DB_HOST,
     "dialect": "mariadb"
   },
   "test": {
