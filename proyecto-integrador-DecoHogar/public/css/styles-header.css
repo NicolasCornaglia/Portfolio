@@ -26,7 +26,7 @@ p {
 }
 
 a .logo {
-   width: 40vw;
+   width: 30vw;
 }
 
 .searcher {
@@ -34,7 +34,7 @@ a .logo {
    border-radius: 0px;
    border-width: 0;
    height: 25px;
-   font-size: 15px;
+   font-size: 10px;
    box-shadow: 1px 1px 1px 1px black;
 }
 
@@ -51,10 +51,14 @@ a .logo {
    display: flex;
    justify-content: center;
    align-items: center;
-   width: 50%;
+   width: 60%;
    padding-right: 25px;
-
 }
+
+.search-form{
+   width: 100%     
+}
+
 
 .user-navbar {
    display: none;
@@ -109,8 +113,64 @@ a .logo {
    display: none;
 }
 
+.main-header-top-bar {
+   display: none;
+}
+
+.mobile-header {
+   background-color: white;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+#myLinks {
+   display: none;
+}
+
+#myLinks a {
+   display: flex;
+   flex-direction: row;
+   background-color: white;
+   color: black;
+   text-decoration: none;
+   padding: 10px;
+   font-size: 14px;
+   font-weight: bold;
+   padding-left: 10%;
+}
+
+#myLinks a:hover {
+   background-color: #ddd;
+   color: black;
+}
+
+.hamburger-button a {
+   color: white;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+   display: block;
+ }
+
+ .hamburger-button:hover {
+   background-color: #ddd;
+   color: black;
+ }
+
+
 /* Fin del header */
 @media (min-width: 450px) {
+
+
+   .mobile-header {
+      display: none;
+   }
+
+
+   .main-header-top-bar {
+      display: flex;
+   }
 
    .fixed-header {
       display: flex;
@@ -127,11 +187,12 @@ a .logo {
    }
 
    a .logo {
-      width: 200px;
+      width: 27vw;
    }
 
    .form {
       justify-content: center;
+      max-width: 40vw;
    }
 
    .hamburger-button {
@@ -166,7 +227,7 @@ a .logo {
       width: 80%;
       border-radius: 0px;
       height: 35px;
-      font-size: 20px;
+      font-size: 13px;
       padding: 3px
    }
 
@@ -187,11 +248,11 @@ a .logo {
    /* Fin del header */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
 
    /* Inicio del header */
    a .logo {
-      width: 250px;
+      width: 270px;
    }
 
 

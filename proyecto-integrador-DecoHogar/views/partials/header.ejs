@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="\css\styles-header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Header</title>
 </head>
 
@@ -23,18 +24,18 @@
         <ul class="user-navbar">
             <% if(locals.isLogged) { %>
                 <a href="/u/profile"><img src="<%= locals.loggedUser.avatar%>" alt="" class="user-image"></a>
-                
+
                 <a href="/u/profile">
-                <li style="display:flex;align-items: center;">
-                    <%= locals.loggedUser.firstname%>
-                        <%= locals.loggedUser.lastname%>
-                </li>
+                    <li style="display:flex;align-items: center;">
+                        <%= locals.loggedUser.firstname%>
+                            <%= locals.loggedUser.lastname%>
+                    </li>
                 </a>
                 <% } else { %>
                     <li><a href="/u/login">Ingresá</a></li>
                     <li><a href="/u/register">Registrate </a></li>
-                <% } %>
-                
+                    <% } %>
+
         </ul>
 
 
@@ -45,16 +46,45 @@
                 <div class="cart-number badge">0</div>
             </div>
         </a>
+    </div>
 
-        <div class="mobile-header">
-            <a href="#" class="hamburger-button">
-                <i class="fas fa-bars"></i>
-            </a>
+    <div class="mobile-header">
+
+        <a href="/"> <img src="/images/LogoDH.png" class="logo"> </a>
+
+        <form class="form" action="/p/api/products" method="GET">
+            <input class="searcher" placeholder="Buscar productos" name="search" />
+            <button class="submit"><i class="fa fa-search"></i></button>
+        </form>
+
+        <a href="javascript:void(0);" class="hamburger-button" onclick="myFunction()">
+            <i class="fas fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="mobile-bottom-header">
+        <div id="myLinks">
+            <a href="/u/profile">Mi perfil</a>
+            <a href="/u/login">Ingresar a mi cuenta</a>
+            <a href="/u/register">Registrarme</a>
+            <a href="/p/productCart">Mi Carrito</a>
         </div>
     </div>
+
 
 </body>
 
 </html>
 
 <script src="/js/script-home-shop-cart.js"></script>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>

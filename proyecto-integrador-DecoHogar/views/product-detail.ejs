@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/css/styles-product-detail.css">
+        <script src="/js/product-detail.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <%- include('./partials/header') %>
+    </header>
+
+    <main>
+        <div class="main-mobile">
+            <div class="product">
+                <div class="top-img">
+                    <h2 class="product-name">
+                        <%= data.product.name %>
+                    </h2>
+                </div>
+                <img src="<%= data.product.image %>" alt="producto a mostrar">
+                <div class="bottom-img">
+                    <h3 class="product-price"> $ <%= data.product.price %></h3>
+                    <p class="product-description">Precio en 12 cuotas: $ <%= (data.product.price/12).toFixed(2) %></p>
+                    <p class="product-description"> <%= data.product.description %> </p>
+                    <p class="product-description"> Dimensiones: <%= data.product.dimensions %> (cm)</p>
+                    <p class="product-description"> Color: <%= data.colors[data.product.color_id-1].name %></p>
+                    <a href="#" class="product-payment-options">Ver medios de pago</a>
+                </div>
+            </div>
+            <div class="bottom-buttons">
+                <h7 class="title">Calcule precio para varias unidades:</h7>
+                    <div>
+                        <div class="cantidad" action="#" method="GET">
+                            <input class="cuantity" id="cuantity" placeholder="Ingrese cuantos items quiere" />
+                        </div>
+                    </div>
+                    <p id="priceWithCuantity" style="font-style:italic; color: rgb(74, 161, 74)">Precio para 1 unidad: $
+                        <%= data.product.price %>
+                    </p>
+                    <div class="buy-buttons" data-id="<%- data.product.id %>">
+                        <button class="button agregar_carrito" id="agregar_carrito" data-id="<%- data.product.id %>">
+                            Añadir al carrito
+                        </button>
+                    </div>
+            </div>
+        </div>
+
+        <div class="main-web">
+            <div class="flexbox-producto">
+
+                <div class="product-img">
+                    <img src="<%= data.product.image %>" alt="producto a mostrar">
+                </div>
+
+                <div class="rigth-info">
+                    <h2>
+                        <%= data.product.name %>
+                    </h2>
+                    <p>
+                        <%= data.product.description %>
+                    </p>
+                    <h4 class="title">Precio por unidad:</h4>
+                    <p> $ <%= data.product.price.toFixed(2) %>
+                    </p>
+                    <span id="productPrice" style="display: none;">
+                        <%= data.product.price.toFixed(2) %>
+                    </span>
+                    <h4 class="title">Color: </h4>
+                    <span>
+                        <%= data.colors[data.product.color_id-1].name %>
+                    </span>
+                    <h4 class="title">Altura, Ancho y Profundidad: </h4>
+                    <span>
+                        <%= data.product.dimensions %> (cm)
+                    </span>
+                    <h4 class="title">Material: </h4>
+                    <span>
+                        <%= data.materials[data.product.material_id-1].name %>
+                    </span>
+
+                    <h4 class="title">Garantía:</h4>
+                    <p>6 meses</p>
+
+                    <h7 class="title">Calcule precio para varias unidades:</h7>
+                    <div class="cantidad">
+                        <div class="cantidad" action="#" method="GET">
+                            <input class="cuantity" id="cuantity" placeholder="Ingrese cuantos items quiere" />
+                        </div>
+                    </div>
+
+
+                    <p id="priceWithCuantity" style="font-style:italic; color: rgb(74, 161, 74)">Precio para 1 unidad: $
+                        <%= data.product.price %>
+                    </p>
+
+                    <a href="#"> Ver medios de pago </a>
+
+                    <div class="buy-buttons" data-id="<%- data.product.id %>">
+                        <button class="button agregar_carrito" id="agregar_carrito" data-id="<%- data.product.id %>">
+                            Añadir al carrito
+                        </button>
+                    </div>
+                    <% if(locals.isLogged) { %>
+                        <% if (locals.loggedUser.role=="admin" ) { %>
+                            <a href='/p/edit/<%- data.product.id %>'>
+                                <div class="buy-buttons">
+                                    <button class="button agregar_carrito">
+                                        Editar producto
+                                    </button>
+                                </div>
+                            </a>
+                            <form action="/p/api/products/<%- data.product.id %>?_method=DELETE" method="POST">
+                                <div class="buy-buttons">
+                                    <button type="submit" class="button agregar_carrito">
+                                        Eliminar producto
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            <% } %>
+                                <% } %>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+
+</body>
+
+</html>

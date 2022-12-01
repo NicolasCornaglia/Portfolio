@@ -14,7 +14,7 @@ const controller = {
         return res.render('login.ejs', { errors: false })
     },
     displayRegisterForm: (req, res) => {
-        return res.render('register-form.ejs', { errors: [] })
+        return res.render('user-register.ejs', { errors: [] })
     },
     processRegister: async (req, res) => {
         const errors = validationResult(req);
@@ -39,7 +39,7 @@ const controller = {
             await User.create(newUser);
             return res.redirect('/u/login');
         }
-        return res.render('register-form', { errors: errors.array() })
+        return res.render('user-register', { errors: errors.array() })
     },
     loginProcess: async (req, res) => {
         const userEmail = req.body.email;
@@ -64,7 +64,7 @@ const controller = {
         let orders = await Order.findAll({
             where: {userId: req.session.loggedUser.id}
         })
-        return res.render("userProfile", { user: req.session.loggedUser, orders: orders })
+        return res.render("user-profile", { user: req.session.loggedUser, orders: orders })
     },
     logOut: (req, res) => {
         res.clearCookie('userMail');

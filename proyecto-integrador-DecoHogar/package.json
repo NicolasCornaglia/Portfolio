@@ -2,6 +2,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
     "cookies-parser": "^1.2.0",
     "cors": "^2.8.5",
     "ejs": "^3.1.8",
@@ -30,6 +31,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "12.x"
+  }, 
   "bugs": {
     "url": "https://github.com/NicolasCornaglia/grupo_3_HBO/issues"
   },

@@ -17,10 +17,10 @@ const controller = {
     displayCreate: async (req, res) => {
         const [categories, colors, materials] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll()]);
 
-        return res.status(200).render('creacion.ejs', { errors: [], data: { materials: materials, colors: colors, categories: categories } });
+        return res.status(200).render('product-create.ejs', { errors: [], data: { materials: materials, colors: colors, categories: categories } });
     },
     displayProductCart: (req, res) => {
-        return res.render('productCart.ejs',);
+        return res.render('shop-cart.ejs',);
     },
     createProduct: async (req, res) => {
         const [categories, colors, materials] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll()]);
@@ -44,7 +44,7 @@ const controller = {
 
             return res.redirect('/')
         }
-        return res.render('creacion.ejs', { errors: errors.array(), data: { materials: materials, colors: colors, categories: categories } })
+        return res.render('product-create.ejs', { errors: errors.array(), data: { materials: materials, colors: colors, categories: categories } })
     },
     renderSearchView: async (req, res) => {
         let products
@@ -59,8 +59,8 @@ const controller = {
         } catch (error) {
             console.error("ERROR: ", error)
         }
-        /* console.log("products: ",products) */
-        res.render("searchproducts.ejs", { products })
+        
+        res.render("product-search.ejs", { products })
 
     },
     getAll: async (req, res) => {
@@ -84,12 +84,12 @@ const controller = {
         const [categories, colors, materials] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll()]);
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-            return res.status(200).render('editarPublicacion.ejs', {
+            return res.status(200).render('product-edit.ejs', {
                 errors: [],
                 data: { productToEdit: foundProduct, materials: materials, colors: colors, categories: categories }
             })
         }
-        return res.render('editarPublicacion.ejs', { errors: errors.array(), data: { materials: materials, colors: colors, categories: categories } })
+        return res.render('product-edit.ejs', { errors: errors.array(), data: { materials: materials, colors: colors, categories: categories } })
     },
 
     obtenerPorId: async (req, res) => {
@@ -139,11 +139,11 @@ const controller = {
             }
             return res.redirect('/')
         }
-        return res.render('editarPublicacion.ejs', { errors: errors.array(), data: { productToEdit: foundProduct, materials: materialsDB, colors: colorsDB, categories: categoriesDB } })
+        return res.render('product-edit.ejs', { errors: errors.array(), data: { productToEdit: foundProduct, materials: materialsDB, colors: colorsDB, categories: categoriesDB } })
     },
     detailProduct: async (req, res) => {
         const [categories, colors, materials, foundProduct] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll(), Product.findByPk(req.params.id)]);
-        return res.render('productDetail.ejs', { data: { product: foundProduct, materials: materials, colors: colors, categories: categories } });
+        return res.render('product-detail.ejs', { data: { product: foundProduct, materials: materials, colors: colors, categories: categories } });
     },
     destroy: async (req, res) => {
         await Product.destroy({

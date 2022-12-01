@@ -1,5 +1,5 @@
 const db = require('../database/models');
-const sequelize = require('sequelize');
+
 const Product = db.Product;
 const Category = db.Category;
 const OrderItem = db.OrderItem
@@ -80,10 +80,6 @@ const controller = {
          console.error("ERROR: ", error)
          res.status(404).send(error)
       }
-   },
-   // TODO
-   productsByCategory: async (req, res) => {
-
    },
    getAmountProductsSold: async (req, res) => {
       try {
